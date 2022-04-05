@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="1000px" height="1000px"
+    viewBox="0 0 1000 1000"
+    preserveAspectRatio="xMidYMid">
+    <!-- <rect x="0" y="0" width="3" height="2"
+        stroke="blue" fill="none" stroke-width="0.05"/>
+    <text x="0.2" y="0.5" font-size="0.4" fill="red">Hello World!</text>
+    <line x1="0.1" y1="0.7" x2="2.9" y2="0.7"
+        stroke-width="0.05" stroke="blue"/>
+    <ellipse cx="1.5" cy="1.4"  rx=".6" ry=".4" fill="rgb(0,255,180)"/>
+    <circle cx="0.4" cy="1.4" r="0.3"
+        fill="magenta" stroke="black" stroke-width="0.03"/> -->
+        <defs>
+            <g id = "poly" transform = "rotate(0)">
+                <animateTransform attributeName = "transform" type = "rotate"
+                    from = "0" to = "-360"
+                    begin = "0s" dur = "15s"  repeatCount = "indefinite"/>
+                <path stroke="black" fill="none" d="M  97,20 L 0,0 97,20 80,58 0,0 80,58 50,86 0,0 50,86 10,99 0,0 10,99 -30,95 0,0 -30,95 -66,74 0,0 -66,74 -91,40 0,0 -91,40 -100,1 0,0 -100,1 -91,-40 0,0 -91,-40 -66,-74 0,0 -66,-74 -30,-95 0,0 -30,-95 10,-99 0,0 10,-99 50,-86 0,0 50,-86 80,-58 0,0 80,-58 97,-20 0,0 97,-20 Z" />
+            </g>
+        </defs>
+      
+    <defs>
+        <g id="figure1">
+            <use xlink:href = "#poly" transform = "translate (280,140)" />
+            <use xlink:href = "#poly" transform = "translate (750,270)" />
+            <rect x="300" y="50" width="500" height="30"
+                fill="red"
+                stroke="red" stroke-width="1"
+                transform="rotate(15)"/>
+            <polygon points="450,500 500,200 550,500"
+                fill="blue" stroke="blue" stroke-width="1"/>
+        </g>
+    </defs>
+    <defs>
+        <g id="figure2">
+            <use xlink:href = "#poly" transform = "translate (280,140)" />
+            <use xlink:href = "#poly" transform = "translate (750,270)" />
+            <rect x="300" y="50" width="500" height="30"
+                fill="red"
+                stroke="red" stroke-width="1"
+                transform="rotate(15)"/>
+            <polygon points="450,500 500,200 550,500"
+                fill="purple" stroke="blue" stroke-width="1"/>
+        </g>
+    </defs>
+    <defs>
+        <g id="figure3">
+            <use xlink:href = "#poly" transform = "translate (280,140)" />
+            <use xlink:href = "#poly" transform = "translate (750,270)" />
+            <rect x="300" y="50" width="500" height="30"
+                fill="red"
+                stroke="red" stroke-width="1"
+                transform="rotate(15)"/>
+            <polygon points="450,500 500,200 550,500"
+                fill="green" stroke="blue" stroke-width="1"/>
+        </g>
+    </defs>
+    <use xlink:href = "#figure1" transform="translate (100,500) scale(0.8,0.8)"/>
+    <use xlink:href = "#figure2" transform="translate (-100,250) scale(0.6,0.6)"/>
+    <use xlink:href = "#figure3" transform="translate (600,300) scale(0.4,0.4)"/>

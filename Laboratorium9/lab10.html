@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+ <style>
+	body 
+	{
+		margin-left: -200px;
+        margin-top: -100px;
+	}
+
+	canvas 
+	{
+    width: 100%;
+    height: 100%;
+	}
+</style> 
+<script src="three.js-master\build\three.js"></script>
+</head>
+<body>
+<script>
+let canvas = document.getElementById("glcanvas");
+
+const scene = new THREE.Scene({color: 0xfff});
+
+const camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 1, 1000);
+
+const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+document.body.appendChild(renderer.domElement);
+
+const light = new THREE.PointLight( 0xffffff, 1, 300 );
+light.position.set(-5, -0.5, 0.5);
+camera.add(light);
+scene.add(camera);
+
+const material = new THREE.MeshPhongMaterial(
+    {
+        color: 0xffffff, 
+    });
+
+let krolowa = new THREE.Group();
+
+const baseGeometry = new THREE.CylinderGeometry(0.4, 0.4, 0.1,100);
+
+const krolowaGeometry_9 = new THREE.CylinderGeometry(0.8,0.8, 0.1, 100);
+const krolowaPart_9 = new THREE.Mesh(krolowaGeometry_9, material);
+krolowaPart_9.position.y=0.6;
+krolowa.add(krolowaPart_9);
+
+
+const krolowaGeometry_1 = new THREE.CylinderGeometry(0.8,0.8, 0.2, 100);
+const krolowaPart_1 = new THREE.Mesh(krolowaGeometry_1, material);
+krolowaPart_1.position.y=0.3;
+krolowa.add(krolowaPart_1);
+
+const krolowaGeometry_2 = new THREE.CylinderGeometry(0.5, 0.8, 0.9, 100);
+const krolowaPart_2 = new THREE.Mesh(krolowaGeometry_2, material);
+krolowaPart_2.position.y=0.75; 	
+krolowa.add(krolowaPart_2);
+
+const krolowaGeometry_3 = new THREE.CylinderGeometry(0.5, 0.5, 0.5, 100);
+const krolowaPart_3 = new THREE.Mesh(krolowaGeometry_3, material);
+krolowaPart_3.position.y=1.29; 
+krolowa.add(krolowaPart_3);
+
+const krolowaGeometry_4 = new THREE.CylinderGeometry(0.5, 0.5, 0.9, 100);
+const krolowaPart_4 = new THREE.Mesh(krolowaGeometry_4, material); 
+krolowaPart_4.position.y=1.79;
+krolowa.add(krolowaPart_4);
+
+const krolowaGeometry_5 = new THREE.CylinderGeometry(0.7, 0.75, 0.15, 100);
+const krolowaPart_5 = new THREE.Mesh(krolowaGeometry_5, material);
+krolowaPart_5.position.y=2.1;
+krolowa.add(krolowaPart_5); 
+
+const krolowaGeometry_6= new THREE.CylinderGeometry(0.3, 0.4, 0.2, 100);
+const krolowaPart_6 = new THREE.Mesh(krolowaGeometry_6, material); 
+krolowaPart_6.position.y=2.25;	
+krolowa.add(krolowaPart_6);
+
+
+const krolowaGeometry_8= new THREE.CylinderGeometry(0.6, 0.68, 0.2, 100);
+const krolowaPart_8 = new THREE.Mesh(krolowaGeometry_8, material); 
+krolowaPart_8.position.y=2.15;	
+krolowa.add(krolowaPart_8);
+
+const krolowaGeometry_7 = new THREE.SphereGeometry(0.8, 40, 7);
+const krolowaPart_7 = new THREE.Mesh(krolowaGeometry_7, material);
+krolowa.add(krolowaPart_7);
+krolowaPart_7.position.y=2.95;
+
+const krolowaGeometry_10= new THREE.CylinderGeometry(0.3, 0.5, 0.2, 100);
+const krolowaPart_10 = new THREE.Mesh(krolowaGeometry_10, material); 
+krolowaPart_10.position.y=2.3;	
+krolowa.add(krolowaPart_10);
+
+const krolowaGeometry_11= new THREE.CylinderGeometry(1, 0.3, 0.9, 100);
+const krolowaPart_11 = new THREE.Mesh(krolowaGeometry_11, material); 
+krolowaPart_11.position.y=2.5;	
+krolowa.add(krolowaPart_11);
+
+const krolowaGeometry_12 = new THREE.SphereGeometry(0.23, 38, 7);
+const krolowaPart_12 = new THREE.Mesh(krolowaGeometry_12, material);
+krolowa.add(krolowaPart_12);
+krolowaPart_12.position.y=3.8;
+
+
+krolowa.position.set(0,-2,0);
+scene.add(krolowa);
+renderer.render(scene, camera);
+
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+
+camera.position.z = 4.5;
+
+animate();
+
+</script>
+</body>
+</html>
